@@ -16,12 +16,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version: "3.10"
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas numpy scikit-learn joblib huggingface_hub
+        pip install pandas numpy scikit-learn joblib huggingface_hub jupyter
 
     - name: Hugging Face authentication
       env:
@@ -29,23 +29,19 @@ jobs:
       run: |
         python - <<EOF
         from huggingface_hub import login
-        login(token="$HF_TOKEN")
+        import os
+        login(token=os.environ["HF_TOKEN"])
         EOF
 
-    - name: Run data preparation
+    - name: Execute ML notebook
       run: |
-        python src/data_preparation.py
+        jupyter nbconvert \
+          --to notebook \
+          --execute notebook.ipynb \
+          --output executed_notebook.ipynb
 
-    - name: Train model
-      run: |
-        python src/train_model.py
-
-    - name: Evaluate model
-      run: |
-        python src/evaluate_model.py
-
-    - name: Save model artifact
+    - name: Upload executed notebook
       uses: actions/upload-artifact@v4
       with:
-        name: trained-model
-        path: sales_forecast_model.pkl
+        name: executed-notebook
+        path: executed_notebook.ipynb
