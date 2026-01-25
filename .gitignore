@@ -1,0 +1,116 @@
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.env
+.venv/
+venv/
+ENV/
+
+############################
+# Virtual Environments
+############################
+.env/
+.venv/
+venv/
+pip-wheel-metadata/
+
+############################
+# Environment & Secrets
+############################
+.env
+.env.*
+*.pem
+*.key
+secrets/
+credentials.json
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# Data Files (VERY IMPORTANT)
+############################
+data/
+uploads/
+raw_pdfs/
+processed_pdfs/
+extracted_tables/
+normalized_financials/
+
+############################
+# Excel Outputs
+############################
+*.xlsx
+*.xls
+*.csv
+
+############################
+# PDF Files
+############################
+*.pdf
+
+############################
+# Database
+############################
+*.sqlite3
+*.db
+
+############################
+# Cache & Temp Files
+############################
+.cache/
+.tmp/
+tmp/
+temp/
+*.tmp
+
+############################
+# Jupyter Notebooks
+############################
+.ipynb_checkpoints/
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Frontend (if/when added)
+############################
+node_modules/
+dist/
+build/
+.next/
+out/
+
+############################
+# IDEs & Editors
+############################
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Testing
+############################
+.coverage
+htmlcov/
+pytest_cache/
+
+############################
+# Docker
+############################
+docker-compose.override.yml
+.env.docker
