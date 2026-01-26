@@ -1,2 +1,8 @@
 fastapi
-uvicorn[standard]
+uvicorn
+pandas
+openpyxl
+langchain
+openai
+python-dotenv
+mysql-connector-python

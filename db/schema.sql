@@ -1,3 +1,11 @@
+-- Files
+CREATE TABLE uploaded_files (
+    file_id CHAR(36) PRIMARY KEY,
+    original_filename VARCHAR(255),
+    stored_path VARCHAR(500),
+    uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Companies table
 CREATE TABLE companies (
     company_id CHAR(36) PRIMARY KEY,
