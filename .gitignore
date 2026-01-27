@@ -104,7 +104,8 @@ out/
 
 ############################
 # Testing
-test/
+test.py
+.pytest_cache
 ############################
 .coverage
 htmlcov/
